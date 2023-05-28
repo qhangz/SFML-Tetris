@@ -141,6 +141,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="RussianCube.cpp" />
     <ClCompile Include="Tetris.cpp" />
+    <ClCompile Include="TetrisGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Head.h" />

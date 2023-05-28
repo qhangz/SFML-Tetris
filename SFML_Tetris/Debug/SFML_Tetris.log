@@ -1,1 +1,121 @@
-﻿  SFML_Tetris.vcxproj -> D:\work\gameprogram\SFML_Tetris\Debug\SFML_Tetris.exe
+﻿  RussianCube.cpp
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(57,22): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(152,38): warning C4305: “-=”: 从“double”到“float”截断
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(344,2): warning C4091: “typedef ”: 没有声明变量时忽略“PLAYROLE”的左侧
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(354,2): warning C4091: “typedef ”: 没有声明变量时忽略“gridShape”的左侧
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(442,28): warning C4305: “=”: 从“double”到“float”截断
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(499,28): warning C4305: “=”: 从“double”到“float”截断
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(542,80): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(542,50): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(544,49): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(544,35): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(556,56): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(556,42): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(557,57): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(557,43): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(564,82): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(564,51): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(566,49): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(566,35): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(586,52): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(586,38): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(587,53): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(587,39): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(596,72): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(596,44): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(598,63): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(598,40): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(606,76): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(606,48): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(608,67): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(608,44): warning C4244: “参数”: 从“T”转换到“float”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(617,15): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(818,44): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(818,30): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(819,63): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(819,34): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(822,48): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\Head.h(822,22): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGame.h(41,2): warning C4091: “typedef ”: 没有声明变量时忽略“ButtonState”的左侧
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(96,37): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(101,31): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(102,37): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(106,37): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(110,37): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(116,37): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(121,31): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(122,37): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(126,37): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(130,37): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(134,37): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(138,37): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(70,9): warning C4101: “initialX”: 未引用的局部变量
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(352,45): warning C4244: “=”: 从“T”转换到“int”，可能丢失数据
+          with
+          [
+              T=float
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(369,45): warning C4244: “=”: 从“T”转换到“int”，可能丢失数据
+          with
+          [
+              T=float
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(370,46): warning C4244: “=”: 从“T”转换到“int”，可能丢失数据
+          with
+          [
+              T=float
+          ]
+D:\work\gameprogram\SFML_Tetris\SFML_Tetris\RussianCubeGameDetail.h(392,46): warning C4244: “=”: 从“T”转换到“int”，可能丢失数据
+          with
+          [
+              T=float
+          ]
+  SFML_Tetris.vcxproj -> D:\work\gameprogram\SFML_Tetris\Debug\SFML_Tetris.exe

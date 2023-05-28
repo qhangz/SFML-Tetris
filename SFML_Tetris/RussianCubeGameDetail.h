@@ -24,45 +24,38 @@ void Game::LoadMediaData()
     if (!tBackground.loadFromFile(ss.str()))
     {
         std::cout << "Error: Cannot load background image!" << std::endl;
-        // exit(0);
     }
     ss.str(""); //清空字符串
     ss << "../data/Tetris/images/tiles" << imgSetNo << ".jpg";
     if (!tTiles.loadFromFile(ss.str()))
     {
         std::cout << "Error: Cannot load tiles image!" << std::endl;
-        // exit(0);
     }
     if (!tButtons.loadFromFile("../data/Tetris/images/button.png"))
     {
         std::cout << "Error: Cannot load buttons image!" << std::endl;
-        // exit(0);
     }
     if (!tSwitcher.loadFromFile("../data/Tetris/images/bgSwitch.png"))
     {
         std::cout << "Error: Cannot load switcher image!" << std::endl;
-        // exit(0);
     }
     if (!tFrame.loadFromFile("../data/Tetris/images/frame.png"))
     {
         std::cout << "Error: Cannot load frame image!" << std::endl;
-        /// exit(0);
     }
     if (!tCover.loadFromFile("../data/Tetris/images/cover.png"))
     {
         std::cout << "Error: Cannot load cover image!" << std::endl;
-        // exit(0);
     }
     if (!tGameOver.loadFromFile("../data/Tetris/images/end.png"))
     {
         std::cout << "Error: Cannot load end image!" << std::endl;
-        // exit(0);
     }
     if (!font.loadFromFile("../data/Fonts/ZCOOLKuaiLe-Regular.ttf"))
-        std::cout << "字体没有找到" << std::endl;
+        std::cout << "Error: Cannot load font!" << std::endl;
     text.setFont(font); //加载指定字体
     sBackground.setTexture(tBackground);
-    // sTiles.setTexture(tTiles);
+  
     sFrame.setTexture(tFrame);
     sCover.setTexture(tCover);
     sGameOver.setTexture(tGameOver);
@@ -70,12 +63,7 @@ void Game::LoadMediaData()
     sSwitcher.setTexture(tSwitcher);
     sSwitcher.setOrigin(sSwitcher.getGlobalBounds().width / 2, sSwitcher.getGlobalBounds().height / 2);
 
-    // if(!font.loadFromFile("data/fonts/simsun.ttc"))
-    // {
-    //     std::cout<<"Error: Cannot load font!"<<std::endl;
-    //     //exit(0);
-    // }
-    // text.setFont(font);
+  
 }
 void Game::TextOut1()
 {
@@ -169,8 +157,8 @@ void Game::gameInitial()
 void Game::gameInput()
 {
     Event event;
-    window.setKeyRepeatEnabled(false);
-    // cout<<"01"<<endl;
+    window.setKeyRepeatEnabled(false);  //按键按下只响应一次
+    
     while (window.pollEvent(event))
     {
         if (event.type == Event::Closed)

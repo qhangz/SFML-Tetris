@@ -24,6 +24,9 @@
     <ClCompile Include="RussianCube.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="TetrisGame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tetris.h">
