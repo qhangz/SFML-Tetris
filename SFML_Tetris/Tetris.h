@@ -1,19 +1,15 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <windows.h>
 #include <iostream>
 #include <sstream>
-#include "Head.h"
-using namespace sf;
-#define B_START_CORNER_X 621
-#define B_START_CORNER_Y 743
-#define B_HOLD_CORNER_X 621
-#define B_HOLD_CORNER_Y 802
-#define B_LEFT_CORNER_X 70
-#define B_LEFT_CORNER_Y 440
-#define B_RIGHT_CORNER_X 1295
-#define B_RIGHT_CORNER_Y 440
+
+
+#define GRIDSIZE 35
+#define STAGE_WIDTH 10
+#define STAGE_HEIGHT 20
 #define P1_STAGE_CORNER_X 156
 #define P1_STAGE_CORNER_Y 154
 #define P2_STAGE_CORNER_X 844
@@ -22,57 +18,105 @@ using namespace sf;
 #define P1_NEXT_CORNER_Y 105
 #define P2_NEXT_CORNER_X 702
 #define P2_NEXT_CORNER_Y 105
-#define P1_SCORE_CORNER_X 160
-#define P1_SCORE_CORNER_Y 860
-#define P2_SCORE_CORNER_X 850
-#define P2_SCORE_CORNER_Y 860
-#define INFO_CORNER_X 585
-#define INFO_CORNER_Y 430
-typedef enum ButtonState
-{
-    Continue_Dark, //继续
-    Continue_Light,
-    Hold_Dark, //暂停
-    Hold_Light,
-    Close_Dark, //结束
-    Close_Light,
-    Start_Dark, //开始
-    Start_Light,
-};
-class Game
+#define HOLD_CORNER_X 660
+#define HOLD_CORNER_Y 255
+using namespace std;
+using namespace sf;
+class Tetris
 {
 public:
-    Game();
-    ~Game();
-    RenderWindow window;
-    Tetris player1, player2;
-    bool gameOver, gameQuit;
-    Clock clock;
-    int Window_width, Window_height, stageWidth, stageHeight;
-    bool isGameBegin, isGameHold; //游戏是否开始
-    int isGameOverState;          //游戏结束的状态
-    Vector2i mCornPoint;          //游戏区域位置
-    int gridSize;                 //块的大小
-    int imgSetNo = 1;
-    int imgBGNo, imgSkinNo = 1;
-    Texture tBackground, tTiles, tButtons, tSwitcher, tFrame, tCover, tScore, tGameOver; //创建纹理对象
-    Sprite sBackground, sTiles, sButtons, sSwitcher, sFrame, sCover, sScore, sGameOver;  //创建精灵对象
-    IntRect ButtonRectStart, ButtonRectHold, ButtonRectLeft, ButtonRectRight;
-    int ButtonState_Start, ButtonState_Hold;
-    SoundBuffer sbWin, sbBoom;
-    Sound soundWin, soundBoom;
-    Music bkMusic;
-    Clock gameClock, mouseClickTimer;
-    void gameInitial();
-    void LoadMediaData();
-    Font font;
-    Text text;
-    void gameInput();
-    void gameLogic();
-    void gameDraw();
-    void gameRun();
-    void DrawButton();
-    void DrawResults();
-    void TextOut1();
-    //void TextOut1();
+    Tetris();
+    ~Tetris();
+    Vector2i mCornPoint, nextSquareCornPoint, holdSquareCornPoint; //游戏区域位置
+
+    int gridSize; //块大小
+    int imgBGNo, imgSkinNo;
+    int role;
+    Texture* tTiles;
+    Texture tBackground, tButtons, tNum, tTimer, tCounter, tGameOver;        //创建纹理对象
+    Sprite sBackground, sTiles, sButtons, sNum, sTimer, sCounter, sGameOver; //创建精灵对象
+
+    int Field[STAGE_HEIGHT][STAGE_WIDTH] = { 0 };
+    Vector2i currentSquare[4], nextSquare[4], tempSquare[4], shadowSquare[4];
+    int Figures[7][4] =
+    {
+        3, 5, 1, 7, // I
+        4, 5, 2, 7, // S
+        4, 5, 3, 6, // Z
+        5, 3, 4, 7, // T
+        5, 3, 2, 7, // L
+        5, 7, 3, 6, // J
+        2, 3, 4, 5, // O
+    };
+
+    int dx;
+    bool rotate, hold, hardDrop, newShapeFlag, animationFlag;
+    bool gameOver = 0;
+    int animationRow[4];
+    int score;
+    float animationCtrlValue;
+    float timer, delay;
+
+    int DALAYVALUE = 0.05;
+    int colorNum, nextColorNum, tempcolorNum;
+    int currentShapeNum, nextShapeNum, tempShapeNum;
+
+    static int holdcolorNum, holdShapeNum;
+    static Vector2i holdSquare[4];
+    int b7array[7] = { 0 }, b7Int;
+    int Bag7();
+    RenderWindow* window;
+    void Initial(Texture* tex);
+    void Input(sf::Event event);
+    void Logic();
+    void Draw(sf::RenderWindow* window);
+    bool hitTest();
+    // void Rotate();
+    // void TickDrop();
+    void checkLine();
+    void xMove();
+    void rotateFunc();
+    void yMove();
+    void holdFunc();
+    void slowLoading();
+    void hardDropFunc();
+    void shadow();
+
+    void traditionLogic();
+    void clearLine();
+    void newShapeFunc();
+    void animationFunc(int i);
+    void isWin();
 };
+class TetrisObject
+{
+    int colorNum, nextColorNum, tempcolorNum;
+    int currentShapeNum, nextShapeNum, tempShapeNum;
+    Vector2i currentSquare[4], nextSquare[4], tempSquare[4], shadowSquare[4];
+    static Vector2i holdSquare[4];
+    static int holdcolorNum, holdShapeNum;
+
+};
+
+typedef enum PLAYROLE
+{
+    roleNONE,
+    rolePLAYER1,
+    rolePLAYER2,
+};
+typedef enum gridShape
+{
+    shapeI,
+    shapeS,
+    shapeZ,
+    shapeT,
+    shapeL,
+    shapeJ,
+    shapeO,
+};
+
+
+
+
+
+

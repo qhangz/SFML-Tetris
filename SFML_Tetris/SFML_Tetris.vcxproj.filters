@@ -15,16 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Game.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Tetris.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="RussianCube.cpp">
+    <ClCompile Include="TetrisGame.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="TetrisGame.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,14 +29,13 @@
     <ClInclude Include="Tetris.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Head.h">
+    <ClInclude Include="TetrisGame.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="RussianCubeGame.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="RussianCubeGameDetail.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SFML_Tetris.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
