@@ -4,7 +4,10 @@
 int main()
 {
     Game tetris;
-    tetris.gameRun();
+    while(tetris.window.isOpen())
+    {
+        tetris.gameRun();
+    }
 
     return 0;
 }

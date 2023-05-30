@@ -168,13 +168,14 @@ void Tetris::yMove()
 {
     if (timer > delay)
     {
+        //在图形下落之前先将各坐标进行保存
         for (int i = 0; i < 4; i++)
         {
             tempSquare[i] = currentSquare[i];
             currentSquare[i].y += 1;
         }
 
-        if (!hitTest())
+        if (!hitTest()) //如果发生碰撞则将未撞之前的坐标进行标记
         {
             for (int i = 0; i < 4; i++)
             {
@@ -208,18 +209,21 @@ void Tetris::checkLine()
 {
     int k = STAGE_HEIGHT - 1;
     int yCount = 0;
-    for (int i = STAGE_HEIGHT - 1; i > 0; i--)
+    for (int i = STAGE_HEIGHT - 1; i > 0; i--)  //从舞台下方往上进行遍历
     {
         int xCount = 0;
-        for (int j = 0; j < STAGE_WIDTH; j++)
+        for (int j = 0; j < STAGE_WIDTH; j++)   //统计每行的格子数
         {
-            if (Field[i][j])
+            if (Field[i][j])    //背景图上，相应坐标有格子，则统计格子数
             {
                 xCount++;
             }
-            // Field[k][j]=Field[i][j];
+            // Field[k][j]=Field[i][j];     //将当前统计行的内容，复制到目标行
         }
-        if (xCount < STAGE_WIDTH)
+        //如果当前行满格，则标行停留在当前行，下个循环的时候，行间的复制，
+        //则能覆盖原先行的内容，达到消行的目的。这里的消行操作，实
+        //质是用上方行的内容，覆益满格行的内容
+        if (xCount < STAGE_WIDTH)   
             k--;
         else
         {
