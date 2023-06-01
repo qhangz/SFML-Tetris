@@ -52,7 +52,7 @@ void Game::LoadMediaData()
     {
         std::cout << "Error: Cannot load end image!" << std::endl;
     }
-    if (!font.loadFromFile("../data/Fonts/ZCOOLKuaiLe-Regular.ttf"))
+    if (!font.loadFromFile("../data/Fonts/simsun.ttc"))
         std::cout << "Error: Cannot load font!" << std::endl;
     text.setFont(font); //加载指定字体
     sBackground.setTexture(tBackground);
