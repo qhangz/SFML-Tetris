@@ -12,7 +12,7 @@ Game::Game()
 
     imgBGNo = 1;
     imgSkinNo = 1;
-    window.create(VideoMode(Window_width, Window_height), "Russian Cube");
+    window.create(VideoMode(Window_width, Window_height), "Tetris by HANG");
 }
 Game::~Game()
 {
@@ -53,8 +53,10 @@ void Game::LoadMediaData()
         std::cout << "Error: Cannot load end image!" << std::endl;
     }
     if (!font.loadFromFile("../data/Fonts/simsun.ttc"))
+    {
         std::cout << "Error: Cannot load font!" << std::endl;
-    text.setFont(font); //加载指定字体
+    }
+    text.setFont(font); 
     sBackground.setTexture(tBackground);
 
     sFrame.setTexture(tFrame);
@@ -66,7 +68,7 @@ void Game::LoadMediaData()
 
 
 }
-void Game::TextOut1()
+void Game::TextOut()
 {
     int initialX, initialY;
     int CharacterSize = 36;
@@ -75,18 +77,18 @@ void Game::TextOut1()
     text.setStyle(Text::Bold);
     text.setOutlineColor(Color(255, 255, 255, 255));
     text.setOutlineThickness(5);
-    // text.setPosition(P1_SCORE_CORNER_X, P1_SCORE_CORNER_Y);
-    //std::stringstream ss;
+    text.setPosition(P1_SCORE_CORNER_X, P1_SCORE_CORNER_Y);
+    std::stringstream ss;
 
-    // ss << "score: " << player1.score;
-    // text.setString(ss.str());
-    // window.draw(text);
+    ss << "score: " << player1.score;
+    text.setString(ss.str());
+    window.draw(text);
 
-    // text.setPosition(P2_SCORE_CORNER_X, P2_SCORE_CORNER_Y);
-    //ss.str("");
-    // ss << "score: " << player2.score;
-    // text.setString(ss.str());
-    // window.draw(text);
+    text.setPosition(P2_SCORE_CORNER_X, P2_SCORE_CORNER_Y);
+    ss.str("");
+    ss << "score: " << player2.score;
+    text.setString(ss.str());
+    window.draw(text);
 
     text.setOutlineThickness(0);
     CharacterSize = 24;
@@ -172,10 +174,10 @@ void Game::gameInput()
             window.close();
             gameQuit = true;
         }
-        // cout<<"02"<<endl;
+        
         if (event.type == Event::MouseButtonReleased && event.mouseButton.button == Mouse::Left)
         {
-            cout << 3 << endl;
+            //cout << MouseButtonReleased << endl;
             if (ButtonRectStart.contains(Mouse::getPosition(window)))
             {
                 if (isGameBegin == false)
@@ -184,7 +186,7 @@ void Game::gameInput()
                     player1.animationFlag = false;
                     player2.animationFlag = false;
                     ButtonState_Start = Close_Light;
-                    cout << 2 << endl;
+                    //cout << GameBegin << endl;
                 }
                 else
                 {
@@ -285,13 +287,9 @@ void Game::gameLogic()
     clock.restart();
     player1.timer += time;
     player2.timer += time;
-    cout << player2.gameOver << endl;
-    cout << "101" << endl;
+   
     player1.Logic();
-    cout << "102" << endl;
     player2.Logic();
-    cout << gameOver << endl;
-    cout << player1.gameOver << " " << player2.gameOver << endl;
     gameOver = (player1.gameOver || player2.gameOver);
 }
 
@@ -304,7 +302,7 @@ void Game::gameDraw()
     window.draw(sFrame);
     player1.Draw(&window);
     player2.Draw(&window);
-    TextOut1();
+    TextOut();
     // window.display();
 
     sCover.setPosition(P1_STAGE_CORNER_X, P1_STAGE_CORNER_Y);
@@ -313,7 +311,6 @@ void Game::gameDraw()
     window.draw(sCover);
 
     DrawButton();
-    // TextOut1();
     DrawResults();
     window.display();
 }
@@ -328,13 +325,11 @@ void Game::gameRun()
             gameInput();
             if (isGameBegin == true)
             {
-                cout << 02 << endl;
                 gameLogic();
             }
             // }else{
             //     gameInitial();
             // }
-            // cout<<1<<endl;
             gameDraw();
         }
         while (1)

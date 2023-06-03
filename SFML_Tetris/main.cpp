@@ -3,10 +3,10 @@
 
 int main()
 {
-    Game tetris;
-    while(tetris.window.isOpen())
+    Game Tetris;
+    while(Tetris.window.isOpen())
     {
-        tetris.gameRun();
+        Tetris.gameRun();
     }
 
     return 0;

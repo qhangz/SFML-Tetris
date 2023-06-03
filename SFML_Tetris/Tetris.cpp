@@ -315,7 +315,7 @@ void Tetris::Initial(Texture* tex)
 
 void Tetris::Input(sf::Event event)
 {
-    cout << "role" << role << endl;
+    //cout << "role" << role << endl;
     if (role == rolePLAYER1)
     {
         if (event.type == sf::Event::KeyPressed)
@@ -323,7 +323,7 @@ void Tetris::Input(sf::Event event)
             if (event.key.code == sf::Keyboard::A)
             {
                 dx = -1;
-                cout << "dx" << dx << endl;
+                //cout << "dx" << dx << endl;
                 // rotate=false;
             }
             if (event.key.code == sf::Keyboard::D)
@@ -724,11 +724,11 @@ void Tetris::animationFunc(int i)
 
 void Tetris::isWin()
 {
-    cout << "testwin" << endl;
     for (int i = 0; i < 20; i++)
     {
         for (int j = 0; j < 10; j++)
         {
+            cout << "Field:" << endl;
             cout << Field[i][j] << " ";
         }
         cout << endl;

@@ -64,16 +64,16 @@ public:
     Sound soundWin, soundBoom;
     Music bkMusic;
     Clock gameClock, mouseClickTimer;
-    void gameInitial();
-    void LoadMediaData();
     Font font;
     Text text;
+
+    void gameInitial();
+    void LoadMediaData();
     void gameInput();
     void gameLogic();
     void gameDraw();
     void gameRun();
     void DrawButton();
     void DrawResults();
-    void TextOut1();
-    //void TextOut1();
+    void TextOut();
 };
