@@ -22,6 +22,24 @@
 #define HOLD_CORNER_Y 255
 using namespace std;
 using namespace sf;
+
+typedef enum PLAYROLE
+{
+    roleNONE,
+    rolePLAYER1,
+    rolePLAYER2,
+};
+typedef enum gridShape
+{
+    shapeI,
+    shapeS,
+    shapeZ,
+    shapeT,
+    shapeL,
+    shapeJ,
+    shapeO,
+};
+
 class Tetris
 {
 public:
@@ -71,8 +89,7 @@ public:
     void Logic();
     void Draw(sf::RenderWindow* window);
     bool hitTest();
-    // void Rotate();
-    // void TickDrop();
+
     void checkLine();
     void xMove();
     void rotateFunc();
@@ -98,22 +115,7 @@ class TetrisObject
 
 };
 
-typedef enum PLAYROLE
-{
-    roleNONE,
-    rolePLAYER1,
-    rolePLAYER2,
-};
-typedef enum gridShape
-{
-    shapeI,
-    shapeS,
-    shapeZ,
-    shapeT,
-    shapeL,
-    shapeJ,
-    shapeO,
-};
+
 
 
 

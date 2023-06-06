@@ -14,10 +14,10 @@ Tetris::Tetris()
 Tetris::~Tetris()
 {
 }
-//p270
+
 void Tetris::xMove()
 {
-    ///<-水平Move->///
+    //水平Move//
     for (int i = 0; i < 4; i++)
     {
         tempSquare[i] = currentSquare[i];
@@ -113,7 +113,7 @@ bool Tetris::hitTest()
     }
     return true;
 }
-////////////
+
 // Rotate
 void Tetris::rotateFunc()
 {
@@ -162,7 +162,7 @@ void Tetris::rotateFunc()
     }
 }
 
-//////////////
+
 // Tick下落
 void Tetris::yMove()
 {
@@ -205,6 +205,7 @@ void Tetris::newShapeFunc()
     shadow();
     newShapeFlag = false;
 }
+//消行操作
 void Tetris::checkLine()
 {
     int k = STAGE_HEIGHT - 1;
@@ -220,9 +221,8 @@ void Tetris::checkLine()
             }
             // Field[k][j]=Field[i][j];     //将当前统计行的内容，复制到目标行
         }
-        //如果当前行满格，则标行停留在当前行，下个循环的时候，行间的复制，
-        //则能覆盖原先行的内容，达到消行的目的。这里的消行操作，实
-        //质是用上方行的内容，覆益满格行的内容
+        //如果当前行满格，则标行停留在当前行，下个循环的时候，行间的复制，覆盖原先行的内容，达到消行的目的。
+        //实质是用上方行的内容，覆益满格行的内容
         if (xCount < STAGE_WIDTH)   
             k--;
         else
@@ -250,10 +250,10 @@ void Tetris::checkLine()
 }
 
 
-
+//实现游戏对象响应的纹理加载
 void Tetris::Initial(Texture* tex)
 {
-    //
+    //接受TetrisGame传递过来的纹理变量的指针
     for (int i = 0; i < STAGE_HEIGHT; i++)
     {
         for (int j = 0; j < STAGE_WIDTH; j++)
@@ -323,13 +323,10 @@ void Tetris::Input(sf::Event event)
             if (event.key.code == sf::Keyboard::A)
             {
                 dx = -1;
-                //cout << "dx" << dx << endl;
-                // rotate=false;
             }
             if (event.key.code == sf::Keyboard::D)
             {
                 dx = 1;
-                // rotate=false;
             }
             if (event.key.code == sf::Keyboard::W)
             {
@@ -378,12 +375,10 @@ void Tetris::Input(sf::Event event)
             if (event.key.code == sf::Keyboard::Left)
             {
                 dx = -1;
-                // rotate=false;
             }
             if (event.key.code == sf::Keyboard::Right)
             {
                 dx = 1;
-                // rotate=false;
             }
             if (event.key.code == sf::Keyboard::Up)
             {
@@ -509,6 +504,7 @@ void Tetris::Draw(sf::RenderWindow* w)
     }
 }
 
+//将七个基本图形打包成bag，每次取出一个，全部取出后再生成一包
 int Tetris::Bag7()
 {
     int num;
@@ -519,7 +515,7 @@ int Tetris::Bag7()
     {
         if (b7array[i] == num)
         {
-            i = -1;
+            i = -1; //i++后为0，数组重新遍历
             num = rand() % 7;
         }
     }

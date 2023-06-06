@@ -156,7 +156,7 @@ void Game::gameInitial()
     player1.Initial(&tTiles);
     player2.Initial(&tTiles);
 }
-// p288
+
 void Game::gameInput()
 {
     Event event;
@@ -177,7 +177,7 @@ void Game::gameInput()
         
         if (event.type == Event::MouseButtonReleased && event.mouseButton.button == Mouse::Left)
         {
-            //cout << MouseButtonReleased << endl;
+
             if (ButtonRectStart.contains(Mouse::getPosition(window)))
             {
                 if (isGameBegin == false)
@@ -186,7 +186,6 @@ void Game::gameInput()
                     player1.animationFlag = false;
                     player2.animationFlag = false;
                     ButtonState_Start = Close_Light;
-                    //cout << GameBegin << endl;
                 }
                 else
                 {
@@ -303,7 +302,6 @@ void Game::gameDraw()
     player1.Draw(&window);
     player2.Draw(&window);
     TextOut();
-    // window.display();
 
     sCover.setPosition(P1_STAGE_CORNER_X, P1_STAGE_CORNER_Y);
     window.draw(sCover);
@@ -327,9 +325,6 @@ void Game::gameRun()
             {
                 gameLogic();
             }
-            // }else{
-            //     gameInitial();
-            // }
             gameDraw();
         }
         while (1)
