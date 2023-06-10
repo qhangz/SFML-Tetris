@@ -17,7 +17,7 @@ Tetris::~Tetris()
 
 void Tetris::xMove()
 {
-    //水平Move//
+    //水平Move
     for (int i = 0; i < 4; i++)
     {
         tempSquare[i] = currentSquare[i];
@@ -37,24 +37,18 @@ void Tetris::Logic()
     {
         traditionLogic();
     }
+    //如果有发生新方块生成请求，则先判定是否有动画播放，再new新的方块
     if (newShapeFlag)
     {
         if (animationFlag == false)
         {
             checkLine();
             isWin();
-            if (gameOver == true)
+            if (gameOver == false)
             {
-
+                newShapeFunc();
             }
-            else {
-                if (animationFlag == false)
-                {
-                    newShapeFunc();
-                }
-            }
-
-
+           
         }
         else
         {
@@ -95,7 +89,7 @@ void Tetris::traditionLogic()
         hardDropFunc();
         hardDrop = false;
     }
-    // checkLine();
+
 }
 
 bool Tetris::hitTest()
@@ -114,7 +108,7 @@ bool Tetris::hitTest()
     return true;
 }
 
-// Rotate
+// 顺时针旋转
 void Tetris::rotateFunc()
 {
     int originalHeight = currentSquare[0].y;
@@ -181,7 +175,6 @@ void Tetris::yMove()
             {
                 Field[tempSquare[i].y][tempSquare[i].x] = colorNum;
             }
-            newShapeFunc();
             newShapeFlag = true;
         }
         timer = 0;
@@ -189,11 +182,15 @@ void Tetris::yMove()
 }
 void Tetris::newShapeFunc()
 {
+    //取下一个方块图形
     colorNum = nextColorNum;
     currentShapeNum = nextShapeNum;
+
+ 
     //更新下一个方块图形
     nextShapeNum = Bag7();
     nextColorNum = rand() % 7 + 1;
+
     for (int i = 0; i < 4; i++)
     {
         currentSquare[i] = nextSquare[i];
@@ -250,17 +247,10 @@ void Tetris::checkLine()
 }
 
 
-//实现游戏对象响应的纹理加载
+//实现游戏对象响应的纹理加载,接收TetrisGame传递过来的纹理变量的指针
 void Tetris::Initial(Texture* tex)
 {
-    //接受TetrisGame传递过来的纹理变量的指针
-    for (int i = 0; i < STAGE_HEIGHT; i++)
-    {
-        for (int j = 0; j < STAGE_WIDTH; j++)
-        {
-            Field[i][j] = 0;
-        }
-    }
+
     animationFlag = true;
     animationCtrlValue = 1.0;
     tTiles = tex;
@@ -299,7 +289,6 @@ void Tetris::Initial(Texture* tex)
         currentSquare[i].y = Figures[currentShapeNum][i] / 2;
         nextSquare[i].x = Figures[nextShapeNum][i] % 2;
         nextSquare[i].y = Figures[nextShapeNum][i] / 2;
-        // animation
         animationRow[i] = -1;
     }
     holdShapeNum = -1; //在游戏开始，将hold区的图形设置为一个异常值
@@ -315,7 +304,7 @@ void Tetris::Initial(Texture* tex)
 
 void Tetris::Input(sf::Event event)
 {
-    //cout << "role" << role << endl;
+
     if (role == rolePLAYER1)
     {
         if (event.type == sf::Event::KeyPressed)
@@ -490,6 +479,7 @@ void Tetris::Draw(sf::RenderWindow* w)
         sTiles.setTextureRect(sf::IntRect(nextColorNum * GRIDSIZE, 0, GRIDSIZE, GRIDSIZE));
         sTiles.move(nextSquareCornPoint.x, nextSquareCornPoint.y);
         window->draw(sTiles);
+
     }
     //绘制Hold区的方块
     if (holdShapeNum > -1)
@@ -557,6 +547,7 @@ void Tetris::holdFunc()
     {
         //原hold区为空，从Next区取值
         newShapeFunc();
+        
     }
     else
     {
@@ -720,15 +711,7 @@ void Tetris::animationFunc(int i)
 
 void Tetris::isWin()
 {
-    for (int i = 0; i < 20; i++)
-    {
-        for (int j = 0; j < 10; j++)
-        {
-            cout << "Field:" << endl;
-            cout << Field[i][j] << " ";
-        }
-        cout << endl;
-    }
+
     if (Field[2][5] || Field[2][6])
     {
         gameOver = true;

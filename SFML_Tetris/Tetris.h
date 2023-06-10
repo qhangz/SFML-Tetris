@@ -79,6 +79,8 @@ public:
     int colorNum, nextColorNum, tempcolorNum;
     int currentShapeNum, nextShapeNum, tempShapeNum;
 
+
+
     static int holdcolorNum, holdShapeNum;
     static Vector2i holdSquare[4];
     int b7array[7] = { 0 }, b7Int;
