@@ -44,11 +44,16 @@ void Tetris::Logic()
         {
             checkLine();
             isWin();
-            if (gameOver == false)
+            if (gameOver == true)
             {
-                newShapeFunc();
+
             }
-           
+            else {
+                if (animationFlag == false)
+                {
+                    newShapeFunc();
+                }
+            }
         }
         else
         {
@@ -175,6 +180,7 @@ void Tetris::yMove()
             {
                 Field[tempSquare[i].y][tempSquare[i].x] = colorNum;
             }
+            //newShapeFunc();
             newShapeFlag = true;
         }
         timer = 0;
