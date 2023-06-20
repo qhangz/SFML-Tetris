@@ -325,6 +325,10 @@ void Game::gameRun()
             {
                 gameLogic();
             }
+            else
+            {
+                gameInitial();
+            }
             gameDraw();
         }
         while (1)

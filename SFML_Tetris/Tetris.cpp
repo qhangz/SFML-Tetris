@@ -299,9 +299,9 @@ void Tetris::Initial(Texture* tex)
     }
     holdShapeNum = -1; //在游戏开始，将hold区的图形设置为一个异常值
 
-    for (int i = 0; i > STAGE_HEIGHT; i++)
+    for (int i = 0; i < STAGE_HEIGHT; i++)
     {
-        for (int j = 0; j > STAGE_WIDTH; j++)
+        for (int j = 0; j < STAGE_WIDTH; j++)
         {
             Field[i][j] = 0;
         }
